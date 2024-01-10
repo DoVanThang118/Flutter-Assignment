@@ -1,23 +1,25 @@
 import 'package:flutter/material.dart';
-import 'product_screen.dart';
+import 'home_page.dart';
 
 void main() {
   runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Complex Flutter App',
+      title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.pink,
+
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
-      home: ProductListScreen(products: [
-        Product('Product 1', 'Description 1', 33333),
-        Product('Product 2', 'Description 2', 19.99),
-        Product('Product 3', 'Description 3', 39.99),
-      ]),
+      home: HomePage(),
+      debugShowCheckedModeBanner: false,
     );
   }
 }
